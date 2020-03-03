@@ -1,0 +1,1 @@
+document.body.style.height = 10000 + "px";
