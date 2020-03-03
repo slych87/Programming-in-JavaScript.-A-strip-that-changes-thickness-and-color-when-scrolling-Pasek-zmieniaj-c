@@ -28,15 +28,13 @@ function changeHeight() {
 
     if (good) {
         size += 5;
-        div.style.height = size + "px";
-        div.style.backgroundColor = "green";
     }
     else {
         size -= 5;
-        div.style.height = size + "px";
-        div.style.backgroundColor = "red";
     }
 
+    div.style.height = size + "px";
+    div.style.backgroundColor = good ? "red" : "green";
 }
 
 window.addEventListener("scroll", changeHeight);
