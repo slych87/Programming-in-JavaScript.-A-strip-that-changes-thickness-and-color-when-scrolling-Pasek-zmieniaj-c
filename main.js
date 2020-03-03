@@ -5,18 +5,39 @@ const div = document.createElement("div");
 
 document.body.appendChild(div);
 
-let size = 100 + "px";
+let good = true;
 
-div.style.hight = size + "%";
+let size = 1;
+
+div.style.height = size + "px";
 div.style.width = 100 + "%";
 div.style.position = "fixed";
 div.style.top = "0";
 div.style.left = "0";
-div.style.backgroundColor = "green";
+
+console.log("ok out");
 
 function changeHeight() {
 
+    if (size >= innerHeight / 2) {
+        good = !good;
+    }
+    else if (size <= 0) {
+        good = !good;
+    }
+
+    if (good) {
+        size += 5;
+        div.style.height = size + "px";
+        div.style.backgroundColor = "green";
+    }
+    else {
+        size -= 5;
+        div.style.height = size + "px";
+        div.style.backgroundColor = "red";
+    }
+
 }
 
-document.addEventListener("scrol", changeHeight)
+window.addEventListener("scroll", changeHeight);
 
